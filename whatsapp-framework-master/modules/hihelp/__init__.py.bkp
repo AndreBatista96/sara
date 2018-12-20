@@ -1,0 +1,8 @@
+from app.mac import mac, signals
+
+@signals.message_received.connect
+def __init__(message):
+	if message.text == "Não vou hoje":
+		mac.send_message("Olá, obrigado por avisar", message.conversation)
+	if message.text != "Não vou hoje":
+		mac.send_message("Por favor, só responda se irá hoje ou não. Obrigado", message.conversation)
