@@ -5,7 +5,7 @@ from datetime import datetime
 def __init__(message):
 	if message.text == "Não vou hoje":
 		now = datetime.now()
-		if ((now.hour >= 0) and now.hour <=12)):
+		if ((now.hour >= 0) and (now.hour <=12)):
 			mac.send_message("Bom dia! Obrigado por avisar", message.conversation)
 		if ((now.hour > 12) and (now.hour <= 18)):
 			mac.send_message("Boa tarde! Obrigado por avisar", message.conversation)
